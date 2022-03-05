@@ -7,6 +7,7 @@ const base = Buffer.alloc(1, 0);
 const asset = require("./main");
 const starter = require("../starter/main");
 const http = require("http");
+const cachéFolder = process.env.CACHÉ_FOLDER;
 
 async function listAssets(data, makeZip) {
 	var xmlString;
@@ -47,7 +48,7 @@ async function listAssets(data, makeZip) {
 		default: {
 			files = asset.list(data.movieId, "prop");
 			xmlString = `${header}<ugc more="0">${files
-				.map((v) =>`<prop id="${v.id}" name="${v.name}" enable="Y"/>`)
+				.map((v) =>`<prop subtype="video" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="./_CACHÉ/${v.id}"/>`)
 				.join("")}</ugc>`;
 			break;
 		}
