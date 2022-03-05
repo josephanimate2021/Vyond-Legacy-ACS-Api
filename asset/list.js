@@ -7,7 +7,6 @@ const base = Buffer.alloc(1, 0);
 const asset = require("./main");
 const starter = require("../starter/main");
 const http = require("http");
-const cachéFolder = process.env.CACHÉ_FOLDER;
 
 async function listAssets(data, makeZip) {
 	var xmlString;
