@@ -226,7 +226,7 @@ module.exports = function (req, res, url) {
 		</nav>
 	</header>
 	
-	<body onload="hideHeader()" style="margin:0px">
+	<body onload="hideHeader()">
 		<main>
 			${toObjectString(attrs, params)}
 		</main>
