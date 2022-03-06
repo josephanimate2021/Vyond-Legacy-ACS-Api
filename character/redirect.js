@@ -24,7 +24,7 @@ module.exports = function (req, res, url) {
 		}
 		default: {
 			var type = url.query.type || defaultTypes[theme] || "";
-			redirect = `/cc?themeId=${theme}&bs=${type}`;
+			redirect = `https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/${type}.html`;
 			break;
 		}
 	}
