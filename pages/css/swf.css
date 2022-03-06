@@ -5,8 +5,7 @@ this css contains the swf page styling
 /**
 general
 **/
-#body {
-	background: #696969;
+html, body {
 	margin: 0px;
 }
 
