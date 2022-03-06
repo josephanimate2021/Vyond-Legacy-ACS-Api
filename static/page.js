@@ -145,7 +145,8 @@ module.exports = function (req, res, url) {
 			attrs = {
 				data: process.env.SWF_URL + "/player.swf",
 				type: "application/x-shockwave-flash",
-				id: "video_player",
+				height: "100%",
+				width: "100%",
 			};
 			params = {
 				flashvars: {
@@ -167,7 +168,8 @@ module.exports = function (req, res, url) {
 			attrs = {
 				data: process.env.SWF_URL + "/player.swf",
 				type: "application/x-shockwave-flash",
-				id: "video_player",
+				height: "100%",
+				width: "100%",
 				quality: "medium",
 			};
 			params = {
@@ -205,7 +207,7 @@ module.exports = function (req, res, url) {
 		</script>
 		<link rel="stylesheet" type="text/css" href="/pages/css/modern-normalize.css">
 		<link rel="stylesheet" type="text/css" href="/pages/css/global.css">
-		<link rel="stylesheet" type="text/css" href="/pages/css/swf.css">
+		<link rel="stylesheet" type="text/css" href="/pages/css/swf.css">	
 	</head>
 	
 	<header id="header">
@@ -224,7 +226,7 @@ module.exports = function (req, res, url) {
 		</nav>
 	</header>
 	
-	<body onload="hideHeader()">
+	<body onload="hideHeader()" style="margin:0px">
 		<main>
 			${toObjectString(attrs, params)}
 		</main>
