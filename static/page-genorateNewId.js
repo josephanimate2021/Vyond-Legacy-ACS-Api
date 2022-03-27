@@ -57,7 +57,7 @@ module.exports = function (req, res, url) {
 	<head>
 		<script>
 			function genorateId() { 
-				window.location = 'https://josephanimate2021.github.io/lvm-static/?newId=${params.flashvars.presaveId}'; 
+				window.location = 'https://josephanimate2021.github.io/lvm-static/newVideo?newId=${params.flashvars.presaveId}'; 
 			}
 		</script>
 	</head>
