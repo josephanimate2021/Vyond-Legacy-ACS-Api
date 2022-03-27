@@ -53,6 +53,16 @@ module.exports = function (req, res, url) {
 	}
 	res.setHeader("Content-Type", "text/html; charset=UTF-8");
 	Object.assign(params.flashvars, query);
-	res.end(`<html><head><script>function genorateId() { window.location = 'https://josephanimate2021.github.io/lvm-static/?newId=${params.flashvars.presaveId}'; }</script><body onload="genorateId()"></body></html>`)
+	res.end(`
+<html>
+	<head>
+		<script>
+			function genorateId() { 
+				window.location = 'https://josephanimate2021.github.io/lvm-static/?newId=${params.flashvars.presaveId}'; 
+			}
+		</script>
+	</head>
+	<body onload="genorateId()"></body>
+</html>`)
 	return true;
 };
