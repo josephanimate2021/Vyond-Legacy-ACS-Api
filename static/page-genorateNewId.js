@@ -53,8 +53,7 @@ module.exports = function (req, res, url) {
 	}
 	res.setHeader("Content-Type", "text/html; charset=UTF-8");
 	Object.assign(params.flashvars, query);
-	res.end(`
-<html>
+	res.end(`<html>
 	<head>
 		<script>
 			function genorateId() { 
