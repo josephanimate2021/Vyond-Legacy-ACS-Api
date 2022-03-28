@@ -41,6 +41,7 @@ module.exports = function (req, res, url) {
 			params = {
 				flashvars: {
 					presaveId: presave,
+					theme: "business",
 				},
 				allowScriptAccess: "always",
 				allowFullScreen: "true",
@@ -57,7 +58,7 @@ module.exports = function (req, res, url) {
 	<head>
 		<script>
 			function genorateId() { 
-				window.location = 'https://josephanimate2021.github.io/lvm-static/newVideo?newId=${params.flashvars.presaveId}'; 
+				window.location = 'https://josephanimate2021.github.io/lvm-static/newVideo?newId=${params.flashvars.presaveId}&tray=${params.flashvars.theme}'; 
 			}
 		</script>
 	</head>
