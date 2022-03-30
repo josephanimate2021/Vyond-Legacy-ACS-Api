@@ -2,6 +2,8 @@ const http = require("http");
 const defaultTypes = {
 	family: "adam",
 	anime: "guy",
+	business: "guy",
+	whiteboard: "guy",
 };
 
 /**
