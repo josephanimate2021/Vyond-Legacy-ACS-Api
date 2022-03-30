@@ -19,12 +19,12 @@ module.exports = function (req, res, url) {
 	var redirect;
 	switch (mode) {
 		case "/copy": {
-			redirect = `/cc?themeId=${theme}&original_asset_id=${id.substr(1)}`;
+			redirect = `https://josephanimate2021.github.io/lvm-static/createChars?method=copy&themeId=${theme}&charId=${id.substr(1)}`;
 			break;
 		}
 		default: {
 			var type = url.query.type || defaultTypes[theme] || "";
-			redirect = `https://owenthegoanimator.github.io/Vyond-Legacy-ACS/charactercreator/${theme}/new_char/${type}`;
+			redirect = `https://josephanimate2021.github.io/lvm-static/charRedirect?themeId=${theme}&bs=${type}`;
 			break;
 		}
 	}
