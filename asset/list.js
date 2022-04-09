@@ -89,7 +89,10 @@ module.exports = function (req, res, url) {
 			break;
 		case "/goapi/getUserAssetsXml/":
                         makeZip = false;
-			break;	
+			break;
+		case "/goapi/deleteUserTemplate/":
+			starter.delete();
+			break;
 		default: 
 		return;
 	}
