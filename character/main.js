@@ -59,8 +59,10 @@ function deleteChar(id) {
 	var suffix = id.substr(i + 1);
 	switch (prefix) {
 		case 'c':
-		default:
 			fs.unlinkSync(fUtil.getFileIndex('char-', '.xml', suffix));
+		case 'C':
+		default:
+			console.log('i wish that we could delete cache chars. but we can\'t do that.');
 	}
 }
 /**
