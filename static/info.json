@@ -6,12 +6,6 @@
 			},
 			"content": "<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'><meta charset='utf-8'><title>Heroku | Application Error</title><style media='screen'>html,body,iframe{margin:0;padding:0;}html,body{height:100%;overflow:hidden;}iframe{width:100%;height:100%;border:0;}</style></head><body><iframe src='//www.herokucdn.com/error-pages/no-such-app.html'></iframe></body></html>"
 		},
-		"/goapi/getAssetTags": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "111"
-		},
 		"/crossdomain.xml": {
 			"headers": {
 				"Content-Type": "text/x-cross-domain-policy"
@@ -94,29 +88,23 @@
         }
 	},
 	"POST": {
+		"/goapi/getAssetTags": {
+			"headers": {
+				"Content-Type": "application/json"
+			},
+			"content": "111"
+		},
 		"/goapi/getUserWatermarks/": {
 			"headers": {
 				"Content-Type": "text/html; charset=UTF-8"
 			},
 			"content": "<?xml encoding=\"UTF-8\"?><watermarks><current/><preview/></watermarks>"
 		},
-		"/goapi/getUserFontList/": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "{\"status\":\"ok\",\"data\":[]}"
-		},
 		"/goapi/getMovieInfo/": {
 			"headers": {
 				"Content-Type": "text/html; charset=UTF-8"
 			},
 			"content": "<?xml encoding=\"UTF-8\"?><watermarks><watermark style=\"freeTrial\"/></watermarks>"
-		},
-		"/api_v2/asset/get": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "{\"status\":\"ok\",\"data\":[]}"
 		},
 		"/goapi/rebuildTTS/": {
 			"headers": {
@@ -135,18 +123,6 @@
 				"Content-Type": "text/html; charset=UTF-8"
 			},
 			"content": "1"
-		},
-		"/api_v2/text_component/get_list": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "{\"status\":\"ok\",\"data\":[]}"
-		},
-		"/api_v2/text_component/add": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "{\"status\":\"ok\",\"data\":[]}"
 		}
 	},
 	"pages": {
