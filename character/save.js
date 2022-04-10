@@ -23,13 +23,6 @@ module.exports = function (req, res, url) {
 						.catch(() => res.end(`10`))
 				);
 				return true;
-
-			case "/goapi/deleteAsset/":
-				loadPost(req, res).then(async data => {
-					console.log("Deleting character: "+data.assetId||data.original_asset_id)
-					character.delete(data.assetId || data.original_asset_id)
-				});
-				return true;
 				
 			case "/goapi/saveCCThumbs/":
 				loadPost(req, res).then(([data]) => {
