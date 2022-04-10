@@ -53,6 +53,20 @@ function getCharPath(id) {
  * @param {string} id
  * @returns {string}
  */
+function deleteChar(id) {
+	var i = id.indexOf('-');
+	var prefix = id.substr(0, i);
+	var suffix = id.substr(i + 1);
+	switch (prefix) {
+		case 'c':
+		default:
+			fs.unlinkSync(fUtil.getFileIndex('char-', '.xml', suffix));
+	}
+}
+/**
+ * @param {string} id
+ * @returns {string}
+ */
 function getThumbPath(id) {
 	var i = id.indexOf("-");
 	var prefix = id.substr(0, i);
@@ -149,6 +163,18 @@ module.exports = {
 				saveId = `c-${fUtil.getNextFileId("char-", ".xml")}`;
 				res(save(saveId, data));
 			}
+		});
+	},
+	delete(id) {
+		return new Promise((res, rej) => {
+			fs.readFile(deleteChar(id), (e, b) => {
+				if (e) {
+					var fXml = util.xmlFail();
+					rej(Buffer.from(fXml));
+				} else {
+					res(b);
+				}
+			});
 		});
 	},
 	/**
