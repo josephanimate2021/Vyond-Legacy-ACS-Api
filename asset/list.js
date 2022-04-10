@@ -16,7 +16,7 @@ async function listAssets(data, makeZip) {
 			xmlString = `${header}<ugc more="0">${chars
 				.map(
 					(v) =>
-						`<char id="${v.id}" name="Untitled" cc_theme_id="${v.theme}" thumbnail_url="http://localhost:4343/char_thumbs/${v.id}.png" copyable="Y"><tags/></char>`
+						`<char id="${v.id}" name="Untitled" cc_theme_id="${v.theme}" thumbnail_url="/char_thumbs/${v.id}.png" copyable="Y"><tags/></char>`
 				)
 				.join("")}</ugc>`;
 			break;
@@ -87,8 +87,9 @@ module.exports = function (req, res, url) {
 	switch (url.pathname) {
 		case "/goapi/getUserAssets/":
 		case "/api_v2/assets/team":
-		case "/api_v2/assets/shared":
+		case "/api_v2/assets/shared": {
 			break;
+		}
 		case "/goapi/getUserAssetsXml/":
                         makeZip = false;
 			break;
