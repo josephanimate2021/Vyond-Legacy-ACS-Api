@@ -147,23 +147,6 @@
 				"Content-Type": "application/json"
 			},
 			"content": "{\"status\":\"ok\",\"data\":[]}"
-		},
-		"/api_v2/assets/team": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "{\"status\":\"ok\",\"data\":[]}"
-		},
-		"/api_v2/assets/shared": {
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"content": "{\"status\":\"ok\",\"data\":[]}"
-		},
-		"/pages/html/list.html": {
-			"headers": {
-				"Location": "/pages/html/list.html"
-			}
 		}
 	},
 	"pages": {
