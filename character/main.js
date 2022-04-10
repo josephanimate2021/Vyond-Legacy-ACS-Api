@@ -165,16 +165,53 @@ module.exports = {
 			}
 		});
 	},
+	/**
+	 * @param {string} id
+	 * @returns {Promise<Buffer>}
+	 */
 	delete(id) {
 		return new Promise((res, rej) => {
-			fs.readFile(deleteChar(id), (e, b) => {
-				if (e) {
-					var fXml = util.xmlFail();
-					rej(Buffer.from(fXml));
-				} else {
-					res(b);
+			var i = id.indexOf("-");
+			var prefix = id.substr(0, i);
+			var suffix = id.substr(i + 1);
+
+			switch (prefix) {
+				case "c":
+				case "C":
+					fs.readFile(deleteChar(id), (e, b) => {
+						if (e) {
+							var fXml = util.xmlFail();
+							rej(Buffer.from(fXml));
+						} else {
+							res(b);
+						}
+					});
+					break;
+
+				case "":
+				default: {
+					// Blank prefix is left here for backwards-compatibility purposes.
+					var nId = Number.parseInt(suffix);
+					var xmlSubId = nId % fw;
+					var fileId = nId - xmlSubId;
+					var lnNum = fUtil.padZero(xmlSubId, xNumWidth);
+					var url = `${baseUrl}/${fUtil.padZero(fileId)}.txt`;
+
+					get(url)
+						.then((b) => {
+							var line = b
+								.toString("utf8")
+								.split("\n")
+								.find((v) => v.substr(0, xNumWidth) == lnNum);
+							if (line) {
+								res(Buffer.from(line.substr(xNumWidth)));
+							} else {
+								rej(Buffer.from(util.xmlFail()));
+							}
+						})
+						.catch((e) => rej(Buffer.from(util.xmlFail())));
 				}
-			});
+			}
 		});
 	},
 	/**
