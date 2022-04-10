@@ -20,7 +20,6 @@ module.exports = function (req, res) {
 				case '/goapi/getCcCharCompositionXml/': {
 					loadPost(req, res).then(async data => {
 						console.log("Loading character: "+data.assetId||data.original_asset_id)
-						res.setHeader('Content-Type', 'text/html; charset=UTF-8');
 						process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 						character.load(data.assetId || data.original_asset_id)
 							.then(v => { res.statusCode = 200, res.end(0 + v) })
