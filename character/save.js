@@ -24,6 +24,13 @@ module.exports = function (req, res, url) {
 				);
 				return true;
 
+			case "/goapi/deleteAsset/":
+				loadPost(req, res).then(async data => {
+					console.log("Deleting character: "+data.assetId||data.original_asset_id)
+					character.delete(data.assetId || data.original_asset_id)
+				});
+				return true;
+				
 			case "/goapi/saveCCThumbs/":
 				loadPost(req, res).then(([data]) => {
 					var id = data.assetId;
