@@ -4,6 +4,7 @@ const http = require("http");
 const chr = require("./character/redirect");
 const pmc = require("./character/premade");
 const chl = require("./character/load");
+const chd = require("./character/delete");
 const chs = require("./character/save");
 const cht = require("./character/thmb");
 const chu = require("./character/upload");
@@ -28,7 +29,7 @@ const sts = require("./starter/save");
 const stt = require("./starter/thmb");
 const url = require("url");
 
-const functions = [mvL, pmc, asl, chl, thl, thL, chs, chu, cht, asL, tsl, chr, ast, mvm, mvl, mvs, mvt, tsv, asu, mvu, stp, gen, stl, sts, stt];
+const functions = [mvL, pmc, asl, chl, thl, thL, chs, chd, chu, cht, asL, tsl, chr, ast, mvm, mvl, mvs, mvt, tsv, asu, mvu, stp, gen, stl, sts, stt];
 
 // Creates an HTTP server
 module.exports = http
