@@ -37,6 +37,13 @@ module.exports = function (req, res) {
 					});
 			});
 			return true;
+			
+			if (req.url != '/goapi/deleteAsset/') return;
+			loadPost(req, res).then(async data => {
+				console.log("Deleting character: "+data.assetId||data.original_asset_id)
+				character.delete(data.assetId || data.original_asset_id)
+			});
+			return true;
 		}
 		default: return;
 	}
