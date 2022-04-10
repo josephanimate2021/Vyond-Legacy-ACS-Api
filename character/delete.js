@@ -22,6 +22,8 @@ module.exports = function (req, res) {
 				res.setHeader('Content-Type', 'text/html; charset=UTF-8');
 				process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 				character.delete(data.assetId || data.original_asset_id)
+					.then(v => { res.statusCode = 200, res.end(0 + v) }).catch(e => { res.statusCode = 404, res.end(1 + e) })
+					
 			});
 			return true;
 		}
