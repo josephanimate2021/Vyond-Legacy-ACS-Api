@@ -21,7 +21,7 @@ module.exports = function (req, res, url) {
 	var redirect;
 	switch (mode) {
 		case "/copy": {
-			redirect = `https://josephanimate2021.github.io/lvm-static/createChars?method=copy&themeId=${theme}&charId=${id.substr(1)}`;
+			redirect = `https://josephanimate2021.github.io/lvm-static/charRedirect?mt=copy&themeId=${theme}&assetChrId=${id.substr(1)}`;
 			break;
 		}
 		default: {
