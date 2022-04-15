@@ -59,7 +59,7 @@ module.exports = function (req, res, url) {
 	<head>
 		<script>
 			function genorateId() { 
-				window.location = '${params.flashvars.return}?newId=${params.flashvars.presaveId}&theme=${params.flashvars.theme}'; 
+				window.location = '${params.flashvars.return}?newId=${params.flashvars.presaveId}&tray=${params.flashvars.theme}'; 
 			}
 		</script>
 	</head>
