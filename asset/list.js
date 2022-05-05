@@ -12,7 +12,22 @@ async function listAssets(data, makeZip) {
 	var xmlString;
 	switch (data.type) {
 		case "char": {
-			const chars = await asset.chars(data.themeId);
+			var themeId;
+			switch (data.themeId) {
+				case "custom": {
+					themeId = "family";
+					break;
+				}
+				case "action": {
+					themeId = "cc2";
+					break;
+				}
+				default: {
+					themeId = data.themeId;
+					break;
+				}
+			}
+			const chars = await asset.chars(themeId);
 			xmlString = `${header}<ugc more="0">${chars
 				.map(
 					(v) =>
