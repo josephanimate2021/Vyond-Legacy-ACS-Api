@@ -61,6 +61,7 @@ module.exports = {
 		}
 		return table;
 	},
+	/* i don't know. because i did some lvm research and you need a meta to store all data including starter data. but i don't know on how i am going to give the asset metadata thing to the starters though.
 	meta(movieId) {
 		return new Promise(async (res, rej) => {
 			if (!movieId.startsWith("s-")) return;
@@ -82,4 +83,5 @@ module.exports = {
 			});
 		});
 	},
+	*/
 };
