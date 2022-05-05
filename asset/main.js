@@ -9,6 +9,11 @@ module.exports = {
 	load(mId, aId) {
 		return caché.load(mId, aId);
 	},
+	/* i could put this in, but that will just break the your library thing inside a movie. Something must be stuck but deletes a file off of the cache folder just fine after testing.
+	delete(mId, aId) {
+		return caché.delete(mId, aId);
+	},
+	*/
 	save(buffer, mId, mode, ext) {
 		var suffix = `-${mode}.${ext}`;
 		return caché.newItem(buffer, mId, "", suffix);
