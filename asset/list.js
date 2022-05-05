@@ -47,12 +47,12 @@ async function listAssets(data, makeZip) {
 			if (data.subtype) {
 				files = asset.list(data.movieId, "prop", "video");
 				xmlString = `${header}<ugc more="0">${files
-					.map((v) =>`<prop subtype="video" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="./_CACHÉ/${v.id}"/>`)
+					.map((v) =>`<prop subtype="video" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="/_CACHÉ/${v.id}"/>`)
 					.join("")}</ugc>`;
 			} else {
 				files = asset.list(data.movieId, "prop");
 				xmlString = `${header}<ugc more="0">${files
-					.map((v) =>`<prop subtype="0" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="./_CACHÉ/${v.id}"/>`)
+					.map((v) =>`<prop subtype="0" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="/_CACHÉ/${v.id}"/>`)
 					.join("")}</ugc>`;
 			}
 		}
