@@ -8,7 +8,7 @@ const http = require("http");
  * @returns {boolean}
  */
 module.exports = function (req, res, url) {
-	if (req.method != "GET" || !url.pathname.startsWith("/meta")) return;
+	if (req.method != "GET" || !url.pathname.startsWith("/smeta")) return;
 	starter
 		.meta(url.path.substr(url.path.lastIndexOf("/") + 1))
 		.then((v) => res.end(JSON.stringify(v)))
