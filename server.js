@@ -13,7 +13,6 @@ const asu = require("./asset/upload");
 const stl = require("./static/load");
 const stp = require("./static/page");
 const gen = require("./static/page-genorateNewId");
-const sma = require("./starter/meta");
 const asl = require("./asset/load");
 const asL = require("./asset/list");
 const ast = require("./asset/thmb");
@@ -30,7 +29,7 @@ const sts = require("./starter/save");
 const stt = require("./starter/thmb");
 const url = require("url");
 
-const functions = [mvL, pmc, asl, chl, thl, thL, chs, chd, chu, cht, asL, tsl, chr, ast, mvm, mvl, mvs, mvt, tsv, asu, mvu, stp, gen, stl, sts, sma, stt];
+const functions = [mvL, pmc, asl, chl, thl, thL, chs, chd, chu, cht, asL, tsl, chr, ast, mvm, mvl, mvs, mvt, tsv, asu, mvu, stp, gen, stl, sts, stt];
 
 // Creates an HTTP server
 module.exports = http
