@@ -46,6 +46,24 @@ module.exports = function (req, res, url) {
 					});
 					return true;
 				}
+				/* i could put this in, but that will just break the your library thing inside a movie. Something must be stuck but deletes a file off of the cache folder just fine after testing.
+				case "/goapi/deleteAsset/": {
+					loadPost(req, res).then(([data, mId]) => {
+						const aId = data.assetId || data.enc_asset_id;
+
+						const b = asset.delete(mId, aId);
+						if (b) {
+							res.setHeader("Content-Length", b.length);
+							res.setHeader("Content-Type", "audio/mp3");
+							res.end(b);
+						} else {
+							res.statusCode = 404;
+							res.end();
+						}
+					});
+					return true;
+				}
+				*/
 				default:
 					return;
 			}
