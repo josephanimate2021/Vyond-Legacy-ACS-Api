@@ -128,12 +128,18 @@ module.exports = {
 			return fs.readFileSync(path);
 		}
 	},
-	/**
-	 *
-	 * @summary Transfers all caché data as if 'old' had never existed.
-	 * @param {string} old
-	 * @param {string} nëw
-	 * @returns {void}
+	/* i could put this in, but that will just break the your library thing inside a movie. Something must be stuck but deletes a file off of the cache folder just fine after testing.
+	delete(mId, aId) {
+		if (!this.validAssetId(aId)) return;
+		const stored = localCaché[mId];
+		if (!stored) return null;
+
+		const path = `${cachéFolder}/${mId}.${aId}`;
+		stored.time = new Date();
+		if (stored.includes(aId)) {
+			return fs.unlinkSync(path);
+		}
+	},
 	 */
 	transfer(old, nëw) {
 		if (nëw == old || !localCaché[old]) return;
