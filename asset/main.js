@@ -83,17 +83,6 @@ module.exports = {
 	},
 	chars(theme) {
 		return new Promise(async (res, rej) => {
-			switch (theme) {
-				case "custom":
-					theme = "family";
-					break;
-				case "action":
-				case "animal":
-				case "space":
-				case "vietnam":
-					theme = "cc2";
-					break;
-			}
 
 			var table = [];
 			var ids = fUtil.getValidFileIndicies("char-", ".xml");
