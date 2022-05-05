@@ -43,12 +43,21 @@ async function listAssets(data, makeZip) {
 				.join("")}</ugc>`;
 			break;
 		}
-		case "prop":
+		case "prop": {
+			if (data.subtype) {
+				files = asset.list(data.movieId, "prop", "video");
+				xmlString = `${header}<ugc more="0">${files
+					.map((v) =>`<prop subtype="video" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="./_CACHÉ/${v.id}"/>`)
+					.join("")}</ugc>`;
+			} else {
+				files = asset.list(data.movieId, "prop");
+				xmlString = `${header}<ugc more="0">${files
+					.map((v) =>`<prop subtype="0" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="./_CACHÉ/${v.id}"/>`)
+					.join("")}</ugc>`;
+			}
+		}
 		default: {
-			files = asset.list(data.movieId, "prop");
-			xmlString = `${header}<ugc more="0">${files
-				.map((v) =>`<prop subtype="video" id="${v.id}" name="${v.name}" enable="Y" holdable="0" headable="0" placeable="1" facing="left" width="0" height="0" asset_url="./_CACHÉ/${v.id}"/>`)
-				.join("")}</ugc>`;
+			xmlString = `${header}<ugc more="0"></ugc>`;
 			break;
 		}
 	}
